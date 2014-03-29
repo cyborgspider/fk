@@ -1,0 +1,54 @@
+!!! 5
+html
+  head
+    link(href="css/styles.css", rel="stylesheet")
+  body
+    nav.nav-wrap
+      ul.nav-main
+        li: a(href="#") Video Trailer
+        li: a(href="#") Game Features
+        li: a(href="#") Screenshots
+        li
+          a.sns-link.facebook(href="facebook.com") Facebook
+          a.sns-link.twitter(href="twitter.com") Twitter
+          a.sns-link.reddit(href="reddit.com") Reddit
+    .wrap
+      header.section-hero
+        h1.logo-main: a(href="#") Faraway Kingdom
+        section.section-signup
+          h2 Become the King of Faraway Kingdom!
+          p Tell me when Faraway Kingdom becomes available in the App Store.
+          .btn-close
+          .input-wrap
+            input.text-input(type="text", placeholder="Enter your email")
+            button.btn-submit Keep in touch
+            .input-error.hide Please enter a valid email
+        section.section-video.hide
+          iframe
+      section.section-info
+        ul.feature-list
+          li.feature-item
+            img(src="img/feature-image-1.png", alt="Feature Image")
+            h3 Unlock new dungeons
+            p and explore the deep undergrounds of your kingdom.
+          li.feature-item
+            img(src="img/feature-image-2.png", alt="Feature Image")
+            h3 Send your heroes to battle
+            p where they will train and collect treasures
+          li.feature-item
+            img(src="img/feature-image-3.png", alt="Feature Image")
+            h3 Gather your bravest heroes
+            p and raid powerful monsters for even better loots.
+      section.section-slideshow
+        ul.slideshow-list
+          li.slideshow-item: img(src="img/temp.png")
+          li.slideshow-item: img(src="img/temp.png")
+          li.slideshow-item: img(src="img/temp.png")
+          li.slideshow-item: img(src="img/temp.png")
+
+    footer.footer-wrap
+      .footer Copyright &copy; SG North. All rights reserved. SG North and Faraway Kingdom are registered trademarks.
+
+
+    script(src="http://code.jquery.com/jquery-2.0.3.min.js")
+    script(src="js/scripts.js")
