@@ -8,15 +8,13 @@ $blue-navy  = #004b76
 $brown-dark = #391c0c
 $eggshell   = #ebf3f5
 
-//HELPER CLASSES
-.hide
-  display none
-.clearfix
-  clearfix()
+
+//BASE TYPOGRAPHY
 
 body
-  font 16px/1.5 "Lucida Sans", "Lucida Sans Unicode", sans-serif
+  font       16px/1.5 "Lucida Sans", "Lucida Sans Unicode", sans-serif
   background url(../img/bg.jpg) no-repeat top center #0e0703
+  color      $gray-light
 
 h2
   font-size 26px
@@ -27,32 +25,45 @@ h3
   margin-bottom 20px
   color         $yellow
 
-
+///NAVIGATION
 .nav-wrap
   background url(../img/bg-nav.png) repeat-x
   height     72px
   width      100%
+  position   fixed
+  top        0
+  z-index    5
 
 .nav-main
   width 962px
   margin 0 auto
   &>li
-    width      240px
-    float      left
-    text-align center
+    width       240px
+    height      71px
+    box-sizing  border-box
+    float       left
+    text-align  center
+    line-height 72px
+    border-left solid 1px #cadce7
+    box-shadow  -1px 0 0 #fff
+    &.last
+      border-right solid 1px #cadce7
     &>a
-      width       100%
-      height      100%
-      display     block
-      font-size   18px
-      color       $blue-navy
-      text-shadow 0 1px 0 #fff
+      width           100%
+      height          100%
+      display         block
+      font-size       18px
+      color           $blue-navy
+      text-shadow     0 1px 0 #fff
+      text-decoration none
+      &.sns-link
+        display inline-block
 
 .sns-link
   background   url(../img/sns-links.png)
-  display      inline-block
   margin-right 30px
-  text-indent -9999px
+  margin-top   22px
+  text-indent  -9999px
   &.facebook
     width               12px
     height              24px
@@ -60,37 +71,127 @@ h3
     &:hover
       background-position -33px 0
   &.twitter
-    width 25px
-    height 22px
-    background-position 0 -24px
+    width               25px
+    height              25px
+    background-position 0 -25px
     &:hover
-      background-position -33px -24px
+      background-position -33px -25px
   &.reddit
     width 33px
     height 27px
-    background-position 0 -47px
+    background-position 0 -50px
     &:hover
-      background-position -33px -47px
+      background-position -33px -50px
 
 
+
+//MAIN CONTENT AND HERO REGION
 .wrap
-  width 1140px
-  margin 0 auto
+  width  1140px
+  margin 0 auto 80px
 
 .logo-main
   background  url(../img/logo-main.png) no-repeat
   width       528px
   height      153px
   text-indent -9999px
-  margin      0 auto
+  margin      0 auto 24px
 
+.section-hero
+  height      588px
+  padding-top 92px
+  position    relative
+
+
+//VIDEO SECTION
+.section-video
+  background  url(../img/bg-video.jpg) no-repeat
+  width       654px
+  height      397px
+  top         283px
+  left        50%
+  margin-left -(@width/2)
+  box-sizing  border-box
+  padding     7px 7px 0
+  position    absolute
+  z-index     1
+
+.embed-container
+  position       relative
+  padding-bottom 56.25%
+  padding-top    30px
+  height         0
+  overflow       hidden
+  max-width      100%
+  height         auto
+
+.embed-container > iframe
+.embed-container > object
+.embed-container > embed
+  position absolute
+  top      0
+  left     0
+  width    100%
+  height   100%
+
+
+
+//SIGNUP SECTION
 .section-signup
   background url(../img/bg-wall.png) no-repeat
-  width      719px
-  height     412px
+  width      686px
+  height     411px
   text-align center
   color      $brown-dark
   position   relative
+  box-sizing border-box
+  padding    130px 0 0
+  margin     0 auto
+  z-index    2
+  p
+    width         400px
+    margin        0 auto 24px
+
+.post-signup
+  position absolute
+  top      130px
+  left     147px
+
+
+.btn-close
+  width      23px
+  height     24px
+  background url(../img/btn-close.png) no-repeat
+  position   absolute
+  top        83px
+  right      41px
+  cursor     pointer
+  &:hover
+    background-position 0 100%
+
+.input-wrap
+  width 468px
+  margin 0 auto
+
+
+.text-input
+  border-radius  4px
+  background     #ebebeb
+  box-shadow     inset 0 4px  #bdbdbd
+  border         solid 1px $yellow
+  font-size      18px
+  display        inline-block
+  width          309px
+  height         42px
+  padding-left   16px
+  box-sizing     border-box
+  vertical-align middle
+  margin-right   5px
+  &:focus
+  &:active
+    box-shadow none
+    outline    none
+    background #fff
 
 
 .btn-submit
@@ -99,54 +200,84 @@ h3
   background  url(../img/btn-submit.png) no-repeat
   text-indent -9999px
   display     inline-block
+  border      none
+  cursor      pointer
   &:hover
     background-position 0 100%
-
-.btn-close
-  width      23px
-  height     23px
-  background url(../img/btn-close.png) no-repeat
-  position   absolute
-  top        83px
-  right      41px
-
-
-.input-wrap
-  width 468px
-  margin 0 auto
-
-.text-input
-  border-radius 4px
-  background    #fff
-  box-shadow    0 4px #bdbdbd
-  border        solid 1px $yellow
-  font-size     18px
-  display       inline-block
-  width         307px
-  height        41px
-  &:focus
   &:active
-    box-shadow none
+  &:focus
+    outline none
 
+.btn-watch-video
+  width       149px
+  height      44px
+  background  url(../img/btn-video.png) no-repeat
+  text-indent -9999px
+  display     inline-block
+  border      none
+  cursor      pointer
+  &:hover
+    background-position 0 100%
+  &:active
+  &:focus
+    outline none
+
+.secondary-signup
+  text-align center
+  padding 80px 0 0
+  &>p
+    margin-bottom 20px
+
+
+//FEATURES
+.feature-list
+  padding 90px 0 70px
 
 .feature-item
   text-align   center
   display      inline-block
   margin-right 115px
+  &.last
+    margin-right 0
 
+.feature-text
+  width   290px
+  margin  0 auto
+  padding 18px 0 0
+
+
+//SLIDESHOW
 .slideshow-item
   display inline-block
-  margin-right 10px
+  margin-right 8px
+  border solid 1px transparent
+  &:hover
+    border-color $yellow
 
+//FOOTER
 .footer-wrap
-  width      100%
-  height     126px
-  background $eggshell
-  color      #a2a2a2
-  font-size 11px
+  box-sizing  border-box
+  width       100%
+  height      126px
+  padding-top 37px
+  background  $eggshell
+  color       #a2a2a2
+  font-size   11px
   font-family 'Lucida Sans Unicode'
+  text-align  center
 
 .footer
-  background url(../img/footer.png) no-repeat
+  background   url(../img/footer.png) no-repeat
+  padding-left 117px
+  width        660px
+  height       44px
+  line-height  44px
+  box-sizing   border-box
+  margin       0 auto
 
 
+//HELPER CLASSES
+.hide
+  display none
+.clearfix
+  clearfix()

@@ -9,8 +9,8 @@ module.exports =function(grunt){
           livereload: true
         },
         js: {
-          files:   ['site/scripts/*.coffee'],
-          tasks:   ['coffee']
+          files:   ['site/scripts/*.js'],
+          tasks:   ['copy']
         },
         css:{
           files:   ['site/styles/*.styl'],
@@ -19,29 +19,19 @@ module.exports =function(grunt){
         html:{
           files:   ['site/*.jade'],
           tasks:   ['jade']
-        }
-      },
-      coffee:{
-        compile: {
-            files: {
-              'build/js/scripts.js': ['site/scripts/*.coffee'] // compile and concat into single file
-            }
-          }
-      },
-      uglify: {
-        my_target: {
-          files: {
-            'build/js/scripts.min.js': ['build/js/scripts.js']
-          }
+        },
+        images:{
+          files:   ['site/images/*'],
+          tasks:   ['copy']
         }
       },
       copy: {
         main: {
-          expand: true,
-          cwd: 'site/images',
-          src: '*',
-          dest: 'build/img'
-        },
+          files:[
+            { expand: true,cwd: 'site/images', src: '*', dest: 'build/img'},
+            { expand: true,cwd: 'site/scripts', src: '*', dest: 'build/js'}
+          ]
+        }
       },
       stylus:{
         compile: {
@@ -80,6 +70,6 @@ module.exports =function(grunt){
 
      //Run the task
      //Copy is registered but not executed. Refer to commented code in the initConfig method for details on how to add it.
-     grunt.registerTask('default', ['watch','coffee', 'uglify', 'stylus', 'jade', 'copy']);
-     grunt.registerTask('build', ['coffee', 'uglify', 'stylus','jade', 'copy']);
+     grunt.registerTask('default', ['watch', 'stylus', 'jade', 'copy']);
+     grunt.registerTask('build', ['stylus','jade', 'copy']);
 };

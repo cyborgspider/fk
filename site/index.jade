@@ -6,9 +6,9 @@ html
     nav.nav-wrap
       ul.nav-main
         li: a(href="#") Video Trailer
-        li: a(href="#") Game Features
-        li: a(href="#") Screenshots
-        li
+        li: a(href="#nav-features") Game Features
+        li: a(href="#nav-screenshots") Screenshots
+        li.last
           a.sns-link.facebook(href="facebook.com") Facebook
           a.sns-link.twitter(href="twitter.com") Twitter
           a.sns-link.reddit(href="reddit.com") Reddit
@@ -16,30 +16,46 @@ html
       header.section-hero
         h1.logo-main: a(href="#") Faraway Kingdom
         section.section-signup
-          h2 Become the King of Faraway Kingdom!
-          p Tell me when Faraway Kingdom becomes available in the App Store.
           .btn-close
+          .pre-signup
+            h2 Become the King of Faraway Kingdom!
+            p Tell me when Faraway Kingdom becomes available in the App Store.
+            .input-wrap
+              input.text-input(type="text", placeholder="Enter your email")
+              button#submit-main.btn-submit Keep in touch
+              .input-error.hide Please enter a valid email
+          .post-signup(style="display:none")
+            h2 Welcome to Faraway Kingdom!
+            p We'll send you a message when Faraway Kingdom is ready to download!
+            button.btn-watch-video Watch Video
+        section.section-video.hide
+          .embed-container
+            iframe(src="http://www.youtube.com/embed/VS46DZe5usY",frameborder="0",allowfullscreen)
+      section.section-signup-secondary(style="display:none")
+        .secondary-signup
+          p Tell me Faraway Kingdom becomes available in the App Store!
           .input-wrap
             input.text-input(type="text", placeholder="Enter your email")
             button.btn-submit Keep in touch
             .input-error.hide Please enter a valid email
-        section.section-video.hide
-          iframe
-      section.section-info
+      section#nav-features.section-info
         ul.feature-list
           li.feature-item
-            img(src="img/feature-image-1.png", alt="Feature Image")
-            h3 Unlock new dungeons
-            p and explore the deep undergrounds of your kingdom.
+            img(src="img/feature-img-1.png", alt="Feature Image")
+            .feature-text
+              h3 Unlock new dungeons
+              p and explore the deep undergrounds of your kingdom.
           li.feature-item
-            img(src="img/feature-image-2.png", alt="Feature Image")
-            h3 Send your heroes to battle
-            p where they will train and collect treasures
-          li.feature-item
-            img(src="img/feature-image-3.png", alt="Feature Image")
-            h3 Gather your bravest heroes
-            p and raid powerful monsters for even better loots.
-      section.section-slideshow
+            img(src="img/feature-img-2.png", alt="Feature Image")
+            .feature-text
+              h3 Send your heroes to battle
+              p where they will train and collect treasures
+          li.feature-item.last
+            img(src="img/feature-img-3.png", alt="Feature Image")
+            .feature-text
+              h3 Gather your bravest heroes
+              p and raid powerful monsters for even better loots.
+      section#nav-screenshots.section-slideshow
         ul.slideshow-list
           li.slideshow-item: img(src="img/temp.png")
           li.slideshow-item: img(src="img/temp.png")
@@ -51,4 +67,5 @@ html
 
 
     script(src="http://code.jquery.com/jquery-2.0.3.min.js")
+    script(src="js/jquery-ui-1.10.4.custom.min.js")
     script(src="js/scripts.js")
