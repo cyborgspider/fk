@@ -9,21 +9,21 @@ $brown-dark = #391c0c
 $eggshell   = #ebf3f5
 
 hideOnMobile()
-  @media only screen and (max-width:30em)
+  @media only screen and (max-width:48em)
     display none
 
 showOnMobile()
-  @media only screen and (max-width:30em)
+  @media only screen and (max-width:48em)
     display block
 
 
 
 //BASE TYPOGRAPHY
 body
-  font       16px/1.5 "Lucida Sans", "Lucida Sans Unicode", sans-serif
+  font       normal 16px/1.5 "Lucida Sans", "Lucida Sans Unicode", sans-serif
   background url(../img/bg.jpg) no-repeat center 72px #0e0703
   color      $gray-light
-  @media screen and (max-width:30em)
+  @media screen and (max-width:48em)
     background url(../img/bg-small.jpg) no-repeat center 71px #211007
 
 h2
@@ -48,7 +48,9 @@ h3
   margin   0 auto
   position relative
   z-index  2
-  @media only screen and (max-width:30em)
+  @media only screen and (max-width:64em)
+    width 800px
+  @media only screen and (max-width:48em)
     width 100%
   &>li
     width       240px
@@ -59,9 +61,11 @@ h3
     line-height 72px
     border-left solid 1px #cadce7
     box-shadow  -1px 0 0 #fff
+    @media only screen and (max-width:64em)
+      width 200px
     &.last
       border-right solid 1px #cadce7
-      @media only screen and (max-width:30em)
+      @media only screen and (max-width:48em)
         float       right
         border-left none
         box-shadow  none
@@ -155,7 +159,9 @@ h3
 .wrap
   width  1140px
   margin 0 auto 80px
-  @media only screen and (max-width:30em)
+  @media only screen and (max-width:64em)
+    width 780px
+  @media only screen and (max-width:48em)
     width  320px
 
 .logo-main
@@ -164,7 +170,7 @@ h3
   height      153px
   text-indent -9999px
   margin      0 auto 24px
-  @media only screen and (max-width:30em)
+  @media only screen and (max-width:48em)
     background url(../img/logo-small.png) no-repeat
     width      301px
     height     87px
@@ -173,7 +179,7 @@ h3
   height      588px
   padding-top 92px
   position    relative
-  @media only screen and (max-width:30em)
+  @media only screen and (max-width:48em)
     height 297px
 
 
@@ -190,7 +196,7 @@ h3
   position    absolute
   z-index     1
   display     none
-  @media only screen and (max-width:30em)
+  @media only screen and (max-width:48em)
     display     block
     width       323px
     height      195px
@@ -207,7 +213,7 @@ h3
   overflow       hidden
   max-width      100%
   height         auto
-  @media only screen and (max-width:30em)
+  @media only screen and (max-width:48em)
     padding-top 12px
 
 .embed-container > iframe
@@ -256,9 +262,9 @@ h3
     background-position 0 100%
 
 .input-wrap
-  width 468px
+  width 470px
   margin 0 auto
-  @media screen and (max-width:30em)
+  @media screen and (max-width:48em)
     width 100%
 
 
@@ -290,7 +296,7 @@ h3
   display     inline-block
   border      none
   cursor      pointer
-  @media screen and (max-width:30em)
+  @media screen and (max-width:48em)
     display block
     margin 20px auto 0
   &:hover
@@ -322,7 +328,7 @@ h3
   padding 80px 0 0
   &>p
     margin-bottom 20px
-  @media screen and (max-width:30em)
+  @media screen and (max-width:48em)
     padding 50px 0 0
 
 
@@ -330,26 +336,49 @@ h3
 //FEATURES
 .feature-list
   padding 90px 0 70px
-  @media screen and (max-width:30em)
+  @media screen and (max-width:48em)
     padding 50px 0 0
 
 .feature-item
   text-align   center
   display      inline-block
   margin-right 115px
+  position     relative
+  overflow     hidden
   &.last
     margin-right 0
-  @media screen and (max-width:30em)
-    margin 0 auto 60px
+  @media screen and (max-width:64em)
+    text-align    left
+    margin-right  0
+    margin-bottom 40px
+    display       block
+    clear         both
+  @media screen and (max-width:48em)
+    margin     0 auto 60px
+    text-align center
     &.last
       margin-right auto
+
+.feature-image
+  @media screen and (max-width:64em)
+    float left
+  @media screen and (max-width:48em)
+    float none
+
 
 .feature-text
   width   290px
   margin  0 auto
   padding 18px 0 0
-  @media screen and (max-width:30em)
-    width 100%
+  @media screen and (max-width:64em)
+    position absolute
+    padding  50px 0 0
+    left     400px
+  @media screen and (max-width:48em)
+    width    100%
+    position relative
+    padding  18px 0 0
+    left     auto
 
 
 //SLIDESHOW
@@ -367,7 +396,9 @@ h3
   height        143px
   box-sizing    border-box
   transition    border-color 0.2s ease-out
-  @media  screen and (max-width:30em)
+  @media screen and (max-width:64em)
+    margin 0 24px 24px 0
+  @media  screen and (max-width:48em)
     margin 0 auto 35px
   &:hover
     border-color $yellow
@@ -404,7 +435,7 @@ h3
   background  $eggshell
   color       #a2a2a2
   font-size   11px
-  font-family 'Lucida Sans Unicode'
+  font-family 'Lucida Sans Unicode', sans-serif
   text-align  center
 
 .footer
@@ -415,7 +446,7 @@ h3
   line-height  44px
   box-sizing   border-box
   margin       0 auto
-  @media screen and (max-width:30em)
+  @media screen and (max-width:48em)
     width               100%
     line-height         2
     background-position 30px 0

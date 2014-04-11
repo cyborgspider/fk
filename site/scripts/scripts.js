@@ -37,7 +37,11 @@ $(function(){
   //RESPONSIVE: Display menu when clicked. Appearance dictated by CSS
   $('#mobile-toggle').click(function(){
     $('.nav-mobile').toggleClass('active')
-  })
+  });
+
+  $('.nav-mobile').on('click','a',function(){
+    $('.nav-mobile').toggleClass('active');
+  });
 
   //We need to turn off modals when screen size is too small.
   $(window).resize(function(){
