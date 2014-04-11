@@ -8,13 +8,23 @@ $blue-navy  = #004b76
 $brown-dark = #391c0c
 $eggshell   = #ebf3f5
 
+hideOnMobile()
+  @media only screen and (max-width:30em)
+    display none
+
+showOnMobile()
+  @media only screen and (max-width:30em)
+    display block
+
+
 
 //BASE TYPOGRAPHY
-
 body
   font       16px/1.5 "Lucida Sans", "Lucida Sans Unicode", sans-serif
-  background url(../img/bg.jpg) no-repeat top center #0e0703
+  background url(../img/bg.jpg) no-repeat center 72px #0e0703
   color      $gray-light
+  @media screen and (max-width:30em)
+    background url(../img/bg-small.jpg) no-repeat center 71px #211007
 
 h2
   font-size 26px
@@ -22,7 +32,6 @@ h2
 
 h3
   font-size     20px
-  margin-bottom 20px
   color         $yellow
 
 ///NAVIGATION
@@ -35,8 +44,12 @@ h3
   z-index    5
 
 .nav-main
-  width 962px
-  margin 0 auto
+  width    962px
+  margin   0 auto
+  position relative
+  z-index  2
+  @media only screen and (max-width:30em)
+    width 100%
   &>li
     width       240px
     height      71px
@@ -48,6 +61,13 @@ h3
     box-shadow  -1px 0 0 #fff
     &.last
       border-right solid 1px #cadce7
+      @media only screen and (max-width:30em)
+        float       right
+        border-left none
+        box-shadow  none
+        width       172px
+    &.desktop-link
+      hideOnMobile()
     &>a
       width           100%
       height          100%
@@ -58,6 +78,51 @@ h3
       text-decoration none
       &.sns-link
         display inline-block
+
+.nav-mobile
+  position   fixed
+  top        72px
+  left       0
+  right      0
+  z-index    1
+  height     0
+  transition height 0.2s ease-out
+  overflow   hidden
+  &.active
+    height 204px
+  &>li
+    background $blue-navy
+    width      100%
+    border-bottom solid 1px #012a41
+    &>a
+      width           100%
+      height          100%
+      padding         20px
+      display         block
+      font-size       18px
+      color           $gray-light
+      text-decoration none
+    &:hover
+      background $yellow
+      &>a
+        color $blue-navy
+
+#mobile-toggle
+  border-right solid 1px #cadce7
+  box-shadow   -1px 0 0 #fff
+  width        83px
+  display      none
+  &>a
+    background url(../img/btn-menu.png) no-repeat
+    width      35px
+    height     24px
+    display    block
+    position   relative
+    top        24px
+    left       24px
+    &:hover
+      background-position 0 100%
+  showOnMobile()
 
 .sns-link
   background   url(../img/sns-links.png)
@@ -77,9 +142,10 @@ h3
     &:hover
       background-position -33px -25px
   &.reddit
-    width 33px
-    height 27px
+    width               33px
+    height              27px
     background-position 0 -50px
+    margin-right        0
     &:hover
       background-position -33px -50px
 
@@ -89,6 +155,8 @@ h3
 .wrap
   width  1140px
   margin 0 auto 80px
+  @media only screen and (max-width:30em)
+    width  320px
 
 .logo-main
   background  url(../img/logo-main.png) no-repeat
@@ -96,11 +164,17 @@ h3
   height      153px
   text-indent -9999px
   margin      0 auto 24px
+  @media only screen and (max-width:30em)
+    background url(../img/logo-small.png) no-repeat
+    width      301px
+    height     87px
 
 .section-hero
   height      588px
   padding-top 92px
   position    relative
+  @media only screen and (max-width:30em)
+    height 297px
 
 
 //VIDEO SECTION
@@ -115,6 +189,15 @@ h3
   padding     7px 7px 0
   position    absolute
   z-index     1
+  display     none
+  @media only screen and (max-width:30em)
+    display     block
+    width       323px
+    height      195px
+    background  url(../img/bg-video-small.jpg) no-repeat
+    margin-left -162px
+    top         194px
+    padding     4px 4px 0
 
 .embed-container
   position       relative
@@ -124,6 +207,8 @@ h3
   overflow       hidden
   max-width      100%
   height         auto
+  @media only screen and (max-width:30em)
+    padding-top 12px
 
 .embed-container > iframe
 .embed-container > object
@@ -151,6 +236,7 @@ h3
   p
     width         400px
     margin        0 auto 24px
+  hideOnMobile()
 
 .post-signup
   position absolute
@@ -172,6 +258,8 @@ h3
 .input-wrap
   width 468px
   margin 0 auto
+  @media screen and (max-width:30em)
+    width 100%
 
 
 .text-input
@@ -202,6 +290,9 @@ h3
   display     inline-block
   border      none
   cursor      pointer
+  @media screen and (max-width:30em)
+    display block
+    margin 20px auto 0
   &:hover
     background-position 0 100%
   &:active
@@ -222,16 +313,25 @@ h3
   &:focus
     outline none
 
+.section-signup-secondary
+  display none
+  showOnMobile()
+
 .secondary-signup
   text-align center
   padding 80px 0 0
   &>p
     margin-bottom 20px
+  @media screen and (max-width:30em)
+    padding 50px 0 0
+
 
 
 //FEATURES
 .feature-list
   padding 90px 0 70px
+  @media screen and (max-width:30em)
+    padding 50px 0 0
 
 .feature-item
   text-align   center
@@ -239,20 +339,61 @@ h3
   margin-right 115px
   &.last
     margin-right 0
+  @media screen and (max-width:30em)
+    margin 0 auto 60px
+    &.last
+      margin-right auto
 
 .feature-text
   width   290px
   margin  0 auto
   padding 18px 0 0
+  @media screen and (max-width:30em)
+    width 100%
 
 
 //SLIDESHOW
+.slideshow-list
+  text-align center
+
 .slideshow-item
-  display inline-block
-  margin-right 8px
-  border solid 1px transparent
+  display       inline-block
+  margin-right  8px
+  border        solid 3px #404040
+  border-radius 2px
+  cursor        pointer
+  position      relative
+  width         249px
+  height        143px
+  box-sizing    border-box
+  transition    border-color 0.2s ease-out
+  @media  screen and (max-width:30em)
+    margin 0 auto 35px
   &:hover
     border-color $yellow
+
+
+.slideshow-link
+  display block
+  width 100%
+  height 100%
+  &>img
+    position absolute
+    display  block
+    width    243px
+    height   137px
+
+
+.thumb-overlay
+  background url(../img/thumb-overlay.png) no-repeat
+  position   absolute
+  transition opacity 0.2s ease-out
+  opacity    0
+  z-index    1
+  width      243px
+  height     137px
+  .slideshow-link:hover &
+    opacity 1
 
 //FOOTER
 .footer-wrap
@@ -274,6 +415,12 @@ h3
   line-height  44px
   box-sizing   border-box
   margin       0 auto
+  @media screen and (max-width:30em)
+    width               100%
+    line-height         2
+    background-position 30px 0
+    padding             0 30px 0 160px
+    text-align          left
 
 
 //HELPER CLASSES
@@ -281,3 +428,85 @@ h3
   display none
 .clearfix
   clearfix()
+
+//COLORBOX
+#colorbox
+#cboxOverlay
+#cboxWrapper
+  position absolute
+  top      0
+  left     0
+  z-index  9999
+#cboxWrapper
+  max-width none
+#cboxOverlay
+  position   fixed
+  width      100%
+  height     100%
+  background #000
+#cboxMiddleLeft
+#cboxBottomLeft
+  clear left
+#cboxContent
+  position relative
+  background url(../img/modal-background.png) no-repeat
+#cboxLoadedContent
+  overflow auto
+  -webkit-overflow-scrolling touch
+#cboxTitle
+  margin 0
+#cboxLoadingOverlay
+#cboxLoadingGraphic
+  position absolute
+  top      0
+  left     0
+  width    100%
+  height   100%
+#cboxPrevious
+#cboxNext
+#cboxClose
+  cursor      pointer
+  border      0
+  padding     0
+  margin      0
+  overflow    visible
+  position    absolute
+  text-indent -99999px
+  outline     none
+
+#cboxClose
+  background url(../img/modal-close.png) no-repeat
+  width      85px
+  height     24px
+  right      0
+  top        -31px
+  &:hover
+    background-position 0 100%
+#cboxPrevious
+#cboxNext
+  background url(../img/modal-arrows.png) no-repeat 0 0
+  width      65px
+  height     120px
+  top        50%
+  margin-top -60px
+#cboxPrevious
+  left 15px
+  &:hover
+    background-position 0 100%
+#cboxNext
+  right               15px
+  background-position 100% 0
+  &:hover
+    background-position 100% 100%
+
+
+.cboxPhoto
+  margin                 auto
+  border                 0
+  display                block
+  max-width              none
+  -ms-interpolation-mode bicubic
+#colorbox
+#cboxContent
+#cboxLoadedContent
+  box-sizing content-box

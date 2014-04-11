@@ -6,10 +6,16 @@
   <body>
     <nav class="nav-wrap">
       <ul class="nav-main">
+        <li id="mobile-toggle"><a href="#"></a></li>
+        <li class="desktop-link"><a href="#">Video Trailer</a></li>
+        <li class="desktop-link"><a href="#nav-features">Game Features</a></li>
+        <li class="desktop-link"><a href="#nav-screenshots">Screenshots</a></li>
+        <li class="last"><a href="facebook.com" class="sns-link facebook">Facebook</a><a href="twitter.com" class="sns-link twitter">Twitter</a><a href="reddit.com" class="sns-link reddit">Reddit</a></li>
+      </ul>
+      <ul class="nav-mobile">
         <li><a href="#">Video Trailer</a></li>
         <li><a href="#nav-features">Game Features</a></li>
         <li><a href="#nav-screenshots">Screenshots</a></li>
-        <li class="last"><a href="facebook.com" class="sns-link facebook">Facebook</a><a href="twitter.com" class="sns-link twitter">Twitter</a><a href="reddit.com" class="sns-link reddit">Reddit</a></li>
       </ul>
     </nav>
     <div class="wrap">
@@ -32,13 +38,13 @@
             <button class="btn-watch-video">Watch Video</button>
           </div>
         </section>
-        <section class="section-video hide">
+        <section class="section-video">
           <div class="embed-container">
             <iframe src="http://www.youtube.com/embed/VS46DZe5usY" frameborder="0" allowfullscreen></iframe>
           </div>
         </section>
       </header>
-      <section style="display:none" class="section-signup-secondary">
+      <section class="section-signup-secondary">
         <div class="secondary-signup">
           <p>Tell me Faraway Kingdom becomes available in the App Store!</p>
           <div class="input-wrap">
@@ -72,10 +78,14 @@
       </section>
       <section id="nav-screenshots" class="section-slideshow">
         <ul class="slideshow-list">
-          <li class="slideshow-item"><img src="img/temp.png"></li>
-          <li class="slideshow-item"><img src="img/temp.png"></li>
-          <li class="slideshow-item"><img src="img/temp.png"></li>
-          <li class="slideshow-item"><img src="img/temp.png"></li>
+          <li class="slideshow-item"><a href="img/screenshot-1.jpg" class="slideshow-link">
+              <div class="thumb-overlay"></div><img src="img/screenshot-1.jpg"></a></li>
+          <li class="slideshow-item"><a href="img/screenshot-2.jpg" class="slideshow-link">
+              <div class="thumb-overlay"></div><img src="img/screenshot-2.jpg"></a></li>
+          <li class="slideshow-item"><a href="img/screenshot-3.jpg" class="slideshow-link">
+              <div class="thumb-overlay"></div><img src="img/screenshot-3.jpg"></a></li>
+          <li class="slideshow-item"><a href="img/screenshot-4.jpg" class="slideshow-link">
+              <div class="thumb-overlay"></div><img src="img/screenshot-4.jpg"></a></li>
         </ul>
       </section>
     </div>
@@ -84,6 +94,7 @@
     </footer>
     <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
     <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="js/jquery.colorbox-min.js"></script>
     <script src="js/scripts.js"></script>
   </body>
 </html>

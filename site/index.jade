@@ -5,13 +5,19 @@ html
   body
     nav.nav-wrap
       ul.nav-main
-        li: a(href="#") Video Trailer
-        li: a(href="#nav-features") Game Features
-        li: a(href="#nav-screenshots") Screenshots
+        li#mobile-toggle: a(href="#")
+        li.desktop-link: a(href="#") Video Trailer
+        li.desktop-link: a(href="#nav-features") Game Features
+        li.desktop-link: a(href="#nav-screenshots") Screenshots
         li.last
           a.sns-link.facebook(href="facebook.com") Facebook
           a.sns-link.twitter(href="twitter.com") Twitter
           a.sns-link.reddit(href="reddit.com") Reddit
+      ul.nav-mobile
+        li: a(href="#") Video Trailer
+        li: a(href="#nav-features") Game Features
+        li: a(href="#nav-screenshots") Screenshots
+
     .wrap
       header.section-hero
         h1.logo-main: a(href="#") Faraway Kingdom
@@ -28,10 +34,10 @@ html
             h2 Welcome to Faraway Kingdom!
             p We'll send you a message when Faraway Kingdom is ready to download!
             button.btn-watch-video Watch Video
-        section.section-video.hide
+        section.section-video
           .embed-container
             iframe(src="http://www.youtube.com/embed/VS46DZe5usY",frameborder="0",allowfullscreen)
-      section.section-signup-secondary(style="display:none")
+      section.section-signup-secondary
         .secondary-signup
           p Tell me Faraway Kingdom becomes available in the App Store!
           .input-wrap
@@ -57,10 +63,22 @@ html
               p and raid powerful monsters for even better loots.
       section#nav-screenshots.section-slideshow
         ul.slideshow-list
-          li.slideshow-item: img(src="img/temp.png")
-          li.slideshow-item: img(src="img/temp.png")
-          li.slideshow-item: img(src="img/temp.png")
-          li.slideshow-item: img(src="img/temp.png")
+          li.slideshow-item
+            a(href="img/screenshot-1.jpg", class="slideshow-link")
+              .thumb-overlay
+              img(src="img/screenshot-1.jpg")
+          li.slideshow-item
+            a(href="img/screenshot-2.jpg", class="slideshow-link")
+              .thumb-overlay
+              img(src="img/screenshot-2.jpg")
+          li.slideshow-item
+            a(href="img/screenshot-3.jpg", class="slideshow-link")
+              .thumb-overlay
+              img(src="img/screenshot-3.jpg")
+          li.slideshow-item
+            a(href="img/screenshot-4.jpg", class="slideshow-link")
+              .thumb-overlay
+              img(src="img/screenshot-4.jpg")
 
     footer.footer-wrap
       .footer Copyright &copy; SG North. All rights reserved. SG North and Faraway Kingdom are registered trademarks.
@@ -68,4 +86,5 @@ html
 
     script(src="http://code.jquery.com/jquery-2.0.3.min.js")
     script(src="js/jquery-ui-1.10.4.custom.min.js")
+    script(src="js/jquery.colorbox-min.js")
     script(src="js/scripts.js")
