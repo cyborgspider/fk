@@ -36,10 +36,12 @@ $(function(){
 
   //RESPONSIVE: Display menu when clicked. Appearance dictated by CSS
   $('#mobile-toggle').click(function(){
+    $(this).children('a').toggleClass('active');
     $('.nav-mobile').toggleClass('active')
   });
 
   $('.nav-mobile').on('click','a',function(){
+    $('#mobile-toggle').children('a').toggleClass('active');
     $('.nav-mobile').toggleClass('active');
   });
 

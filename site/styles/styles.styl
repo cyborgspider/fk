@@ -5,6 +5,7 @@ global-reset()
 $yellow     = #ffd200
 $gray-light = #d2d2d2
 $blue-navy  = #004b76
+$blue       = #11a5ff
 $brown-dark = #391c0c
 $eggshell   = #ebf3f5
 
@@ -80,6 +81,8 @@ h3
       color           $blue-navy
       text-shadow     0 1px 0 #fff
       text-decoration none
+      &:hover
+        color #0091e9
       &.sns-link
         display inline-block
 
@@ -125,6 +128,7 @@ h3
     top        24px
     left       24px
     &:hover
+    &.active
       background-position 0 100%
   showOnMobile()
 
@@ -172,8 +176,8 @@ h3
   margin      0 auto 24px
   @media only screen and (max-width:48em)
     background url(../img/logo-small.png) no-repeat
-    width      301px
-    height     87px
+    width      310px
+    height     90px
 
 .section-hero
   height      588px
@@ -200,7 +204,7 @@ h3
     display     block
     width       323px
     height      195px
-    background  url(../img/bg-video-small.jpg) no-repeat
+    background  url(../img/bg-video-small.png) no-repeat
     margin-left -162px
     top         194px
     padding     4px 4px 0
@@ -281,6 +285,7 @@ h3
   box-sizing     border-box
   vertical-align middle
   margin-right   5px
+  font-family    "Lucida Sans", "Lucida Sans Unicode", sans-serif
   &:focus
   &:active
     box-shadow none
@@ -328,6 +333,7 @@ h3
   padding 80px 0 0
   &>p
     margin-bottom 20px
+    color         white
   @media screen and (max-width:48em)
     padding 50px 0 0
 
