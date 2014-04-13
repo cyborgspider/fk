@@ -4,7 +4,7 @@ function removeSignup(signedUpStatus){
   $('.section-signup').fadeOut(600);
   $('.section-video').show();
   if (!signedUpStatus){
-    $('.section-signup-secondary').slideDown(1000,'easeOutBounce');
+    $('.section-signup-secondary').animate({height:'244px'}, 600,'easeOutBounce');
   }else{
 
   }
