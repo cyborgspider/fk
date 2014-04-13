@@ -8,7 +8,9 @@ html
     nav.nav-wrap
       ul.nav-main
         li#mobile-toggle: a(href="#")
-        li.desktop-link: a(href="#") Video Trailer
+        li.active.desktop-link
+          a(href="#")
+            i.home  Video Trailer
         li.desktop-link: a(href="#nav-features") Game Features
         li.desktop-link: a(href="#nav-screenshots") Screenshots
         li.last
@@ -24,6 +26,7 @@ html
       h1.logo-main: a(href="#") Faraway Kingdom
       section.section-signup
         .warrior
+        .angel
         .btn-close
         .pre-signup
           h2 Become the King of Faraway Kingdom!
@@ -41,17 +44,21 @@ html
           iframe(src="http://www.youtube.com/embed/Ev0wjCM_1DE",frameborder="0",allowfullscreen)
     section.section-signup-secondary
       .secondary-signup
-        p Tell me when Faraway Kingdom becomes available in the App Store!
-        .input-wrap
-          input.text-input(type="text", placeholder="Enter your email")
-          button.btn-submit Keep in touch
-          .input-error.hide Please enter a valid email
+        .secondary-pre-signup
+          p Tell me when Faraway Kingdom becomes available in the App Store!
+          .input-wrap
+            input.text-input(type="text", placeholder="Enter your email")
+            button#submit-secondary.btn-submit Keep in touch
+            .input-error.hide Please enter a valid email
+        .secondary-post-signup(style="display:none")
+          h2 Welcome to Faraway Kingdom!
+          p We'll send you a message when Faraway Kingdom is ready to download!
 
     .content-wrap
       section#nav-features.section-info
         ul.feature-list
           li.feature-item
-            img.feature-image(src="img/feature-img-1.png", alt="Feature Image")
+            img.feature-image(src="img/feature-img-1.gif", alt="Feature Image")
             .feature-text
               h3 Unlock new dungeons
               p and explore the deep undergrounds of your kingdom.

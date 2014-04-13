@@ -13,11 +13,22 @@ function removeSignup(signedUpStatus){
 
 $(function(){
 
+  //Navigation active classes
+  $('.nav-main').on('click', 'li', function(){
+      $(this).addClass('active');
+      $(this).siblings().removeClass('active')
+  });
+
   //Adjust this code to return true if user information is validated properly
   $('#submit-main').click(function(){
     signedUpStatus = true;
     $('.pre-signup').fadeOut(300);
     $('.post-signup').fadeIn(300);
+  });
+  $('#submit-secondary').click(function(){
+    signedUpStatus = true;
+    $('.secondary-pre-signup').fadeOut(300);
+    $('.secondary-post-signup').fadeIn(300);
   });
 
   //User clicks on Watch Video button after signing up

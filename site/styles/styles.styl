@@ -5,16 +5,16 @@ global-reset()
 $yellow     = #ffd200
 $gray-light = #d2d2d2
 $blue-navy  = #004b76
-$blue       = #11a5ff
+$blue       = #00c3ff
 $brown-dark = #391c0c
 $eggshell   = #ebf3f5
 
 hideOnMobile()
-  @media only screen and (max-width:48em)
+  @media only screen and (max-width:47.9em)
     display none
 
 showOnMobile()
-  @media only screen and (max-width:48em)
+  @media only screen and (max-width:47.9em)
     display block
 
 
@@ -24,7 +24,7 @@ body
   font       normal 16px/1.5 "Lucida Sans", "Lucida Sans Unicode", sans-serif
   background #0e0703
   color      $gray-light
-  @media screen and (max-width:48em)
+  @media screen and (max-width:47.9em)
     background url(../img/bg-small.jpg) no-repeat center 71px #211007
 
 h2
@@ -35,8 +35,20 @@ h3
   font-size     20px
   margin-bottom 20px
   color         $yellow
-  @media screen and (max-width:48em)
+  @media screen and (max-width:47.9em)
     margin-bottom 0
+
+i
+  font-style normal
+
+//Icons
+.home
+  background   url(../img/ico-home.png) no-repeat
+  height       22px
+  padding-left 29px
+  a:hover > &
+  li.active &
+    background-position 0 -22px
 
 
 ///NAVIGATION
@@ -53,9 +65,9 @@ h3
   margin   0 auto
   position relative
   z-index  2
-  @media only screen and (max-width:64em)
+  @media only screen and (max-width:71.250em)
     width 800px
-  @media only screen and (max-width:48em)
+  @media only screen and (max-width:47.9em)
     width 100%
   &>li
     width       240px
@@ -66,11 +78,14 @@ h3
     line-height 72px
     border-left solid 1px #cadce7
     box-shadow  -1px 0 0 #fff
-    @media only screen and (max-width:64em)
+    &.active
+      a
+        color $blue
+    @media only screen and (max-width:71.250em)
       width 200px
     &.last
       border-right solid 1px #cadce7
-      @media only screen and (max-width:48em)
+      @media only screen and (max-width:47.9em)
         float       right
         border-left none
         box-shadow  none
@@ -85,8 +100,9 @@ h3
       color           $blue-navy
       text-shadow     0 1px 0 #fff
       text-decoration none
+      position relative
       &:hover
-        color #0091e9
+        color $blue
       &.sns-link
         display inline-block
 
@@ -167,9 +183,9 @@ h3
 .content-wrap
   width  1140px
   margin 0 auto 80px
-  @media only screen and (max-width:64em)
+  @media only screen and (max-width:71.250em)
     width 656px
-  @media only screen and (max-width:48em)
+  @media only screen and (max-width:47.9em)
     width  320px
 
 .logo-main
@@ -178,7 +194,7 @@ h3
   height      153px
   text-indent -9999px
   margin      0 auto 24px
-  @media only screen and (max-width:48em)
+  @media only screen and (max-width:47.9em)
     background url(../img/logo-small.png) no-repeat
     width      310px
     height     90px
@@ -189,17 +205,25 @@ h3
   position    relative
   background  url(../img/bg.png) no-repeat center 72px
   z-index     2
-  @media only screen and (max-width:48em)
+  @media only screen and (max-width:47.9em)
     height 297px
     background none
 
 .warrior
   position absolute
-  width 124px
+  width 215px
   height 124px
-  background url(../img/warrior-ani.gif) no-repeat
+  background url(../img/warrior.gif) no-repeat
   bottom 0
-  right -21px
+  right -100px
+  hideOnMobile()
+.angel
+  position   absolute
+  width      104px
+  height     96px
+  top        48px
+  left       -202px
+  background url(../img/angel.gif) no-repeat
   hideOnMobile()
 
 //VIDEO SECTION
@@ -215,7 +239,7 @@ h3
   position    absolute
   z-index     1
   display     none
-  @media only screen and (max-width:48em)
+  @media only screen and (max-width:47.9em)
     display     block
     width       323px
     height      195px
@@ -232,7 +256,7 @@ h3
   overflow       hidden
   max-width      100%
   height         auto
-  @media only screen and (max-width:48em)
+  @media only screen and (max-width:47.9em)
     padding-top 12px
 
 .embed-container > iframe
@@ -259,8 +283,9 @@ h3
   margin     0 auto
   z-index    2
   p
-    width         400px
-    margin        0 auto 24px
+    width     400px
+    margin    0 auto 24px
+    font-size 18px
   hideOnMobile()
 
 .post-signup
@@ -283,7 +308,7 @@ h3
 .input-wrap
   width 470px
   margin 0 auto
-  @media screen and (max-width:48em)
+  @media screen and (max-width:47.9em)
     width 100%
 
 
@@ -306,6 +331,12 @@ h3
     box-shadow none
     outline    none
     background #fff
+  &.error
+    border-color #f65701
+
+.input-error
+  color      #f65701
+  text-align left
 
 
 .btn-submit
@@ -316,7 +347,7 @@ h3
   display     inline-block
   border      none
   cursor      pointer
-  @media screen and (max-width:48em)
+  @media screen and (max-width:47.9em)
     display block
     margin 20px auto 0
   &:hover
@@ -344,30 +375,44 @@ h3
   height     0
   margin-top -32px
   overflow hidden
+  position relative
   showOnMobile()
-  @media screen and (max-width:48em)
+  @media screen and (max-width:47.9em)
     background none
     height auto
     margin 0
 
 .secondary-signup
   text-align center
-  padding 70px 0 0
-  &>p
+  padding    70px 0 0
+  width      600px
+  height     150px
+  position   relative
+  margin     0 auto
+  p
     margin-bottom 20px
     color         white
     padding 0 20px
-  @media screen and (max-width:48em)
+  @media screen and (max-width:47.9em)
     padding 50px 0 0
+    width   400px
+    height  200px
 
+
+.secondary-post-signup
+  position absolute
+  top      60px
+  color    white
+  h2
+    margin-bottom 10px
 
 
 //FEATURES
 .feature-list
   padding 90px 10px 70px
-  @media screen and (max-width:64em)
+  @media screen and (max-width:71.250em)
     padding 90px 0 70px
-  @media screen and (max-width:48em)
+  @media screen and (max-width:47.9em)
     padding 50px 0 0
 
 .feature-item
@@ -377,23 +422,23 @@ h3
   position     relative
   &.last
     margin-right 0
-  @media screen and (max-width:64em)
+  @media screen and (max-width:71.250em)
     text-align    left
     margin-right  0
     margin-bottom 60px
     display       block
     clearfix()
 
-  @media screen and (max-width:48em)
+  @media screen and (max-width:47.9em)
     margin     0 auto 60px
     text-align center
     &.last
       margin-right auto
 
 .feature-image
-  @media screen and (max-width:64em)
+  @media screen and (max-width:71.250em)
     float left
-  @media screen and (max-width:48em)
+  @media screen and (max-width:47.9em)
     float none
 
 
@@ -401,11 +446,11 @@ h3
   width   290px
   margin  0 auto
   padding 28px 0 0
-  @media screen and (max-width:64em)
+  @media screen and (max-width:71.250em)
     position absolute
     padding  50px 20px 0 0
     left     372px
-  @media screen and (max-width:48em)
+  @media screen and (max-width:47.9em)
     width    100%
     position relative
     padding  18px 0 0
@@ -432,13 +477,15 @@ h3
     border-color $yellow
   &.first
     margin-left 0
-  @media screen and (max-width:64em)
+  @media screen and (max-width:71.250em)
     margin 0 0 50px 70px
     &:nth-child(odd)
       margin-left 0
-  @media  screen and (max-width:48em)
+  @media  screen and (max-width:47.9em)
     margin 0 auto 18px
     float none
+    &:nth-child(odd)
+      margin-left auto
     &.first
       margin-left auto
 
@@ -486,7 +533,7 @@ h3
   line-height  44px
   box-sizing   border-box
   margin       0 auto
-  @media screen and (max-width:48em)
+  @media screen and (max-width:47.9em)
     width               100%
     line-height         2
     background-position 30px 0
