@@ -22,8 +22,9 @@ showOnMobile()
 //BASE TYPOGRAPHY
 body
   font       normal 16px/1.5 "Lucida Sans", "Lucida Sans Unicode", sans-serif
-  background #0e0703
+  background #211007
   color      $gray-light
+  position   relative
   @media screen and (max-width:47.9em)
     background url(../img/bg-small.jpg) no-repeat center 71px #211007
 
@@ -180,9 +181,13 @@ i
 
 
 //MAIN CONTENT
+.top-wrap
+  position relative
+
 .content-wrap
   width  1140px
   margin 0 auto 80px
+  position relative
   @media only screen and (max-width:71.250em)
     width 656px
   @media only screen and (max-width:47.9em)
@@ -217,14 +222,17 @@ i
   bottom 0
   right -100px
   hideOnMobile()
+
 .angel
   position   absolute
   width      104px
   height     96px
-  top        -118px
-  left       -160px
+  top        127px
+  left       12%
   background url(../img/angel.gif) no-repeat
+  z-index    3
   hideOnMobile()
+
 
 //VIDEO SECTION
 .section-video

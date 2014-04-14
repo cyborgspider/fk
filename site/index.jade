@@ -5,56 +5,59 @@ html
     meta(name="viewport", content="width=device-width, initial-scale=1")
     title Faraway Kingdom
   body
+    a(name="#video")
     nav.nav-wrap
       ul.nav-main
         li#mobile-toggle: a(href="#")
         li.active.desktop-link
-          a(href="#")
+          a(href="#video")
             i.home  Video Trailer
-        li.desktop-link: a(href="#nav-features") Game Features
-        li.desktop-link: a(href="#nav-screenshots") Screenshots
+        li.desktop-link: a(href="#features") Game Features
+        li.desktop-link: a(href="#screenshots") Screenshots
         li.last
-          a.sns-link.facebook(href="facebook.com") Facebook
-          a.sns-link.twitter(href="twitter.com") Twitter
-          a.sns-link.reddit(href="reddit.com") Reddit
+          a.sns-link.facebook(href="http://facebook.com") Facebook
+          a.sns-link.twitter(href="http://twitter.com") Twitter
+          a.sns-link.reddit(href="http://reddit.com") Reddit
       ul.nav-mobile
-        li: a(href="#") Video Trailer
-        li: a(href="#nav-features") Game Features
-        li: a(href="#nav-screenshots") Screenshots
+        li: a(href="#video") Video Trailer
+        li: a(href="#features") Game Features
+        li: a(href="#screenshots") Screenshots
 
-    header.section-hero
-      h1.logo-main: a(href="#") Faraway Kingdom
-      section.section-signup
-        .warrior
-        .angel
-        .btn-close
-        .pre-signup
-          h2 Become the King of Faraway Kingdom!
-          p Tell me when Faraway Kingdom becomes available in the App Store.
-          .input-wrap
-            input.text-input(type="text", placeholder="Enter your email")
-            button#submit-main.btn-submit Keep in touch
-            .input-error.hide Please enter a valid email
-        .post-signup(style="display:none")
-          h2 Welcome to Faraway Kingdom!
-          p We'll send you a message when Faraway Kingdom is ready to download!
-          button.btn-watch-video Watch Video
-      section.section-video
-        .embed-container
-          iframe(src="http://www.youtube.com/embed/Ev0wjCM_1DE",frameborder="0",allowfullscreen)
-    section.section-signup-secondary
-      .secondary-signup
-        .secondary-pre-signup
-          p Tell me when Faraway Kingdom becomes available in the App Store!
-          .input-wrap
-            input.text-input(type="text", placeholder="Enter your email")
-            button#submit-secondary.btn-submit Keep in touch
-            .input-error.hide Please enter a valid email
-        .secondary-post-signup(style="display:none")
-          h2 Welcome to Faraway Kingdom!
-          p We'll send you a message when Faraway Kingdom is ready to download!
+    .top-wrap
+      .angel
+      header.section-hero
+        h1.logo-main: a(href="#") Faraway Kingdom
+        section.section-signup
+          .warrior
+          .btn-close
+          .pre-signup
+            h2 Become the King of Faraway Kingdom!
+            p Tell me when Faraway Kingdom becomes available in the App Store.
+            .input-wrap
+              input.text-input(type="text", placeholder="Enter your email")
+              button#submit-main.btn-submit Keep in touch
+              .input-error.hide Please enter a valid email
+          .post-signup(style="display:none")
+            h2 Welcome to Faraway Kingdom!
+            p We'll send you a message when Faraway Kingdom is ready to download!
+            button.btn-watch-video Watch Video
+        section.section-video
+          .embed-container
+            iframe(src="http://www.youtube.com/embed/Ev0wjCM_1DE",frameborder="0",allowfullscreen)
+      section.section-signup-secondary
+        .secondary-signup
+          .secondary-pre-signup
+            p Tell me when Faraway Kingdom becomes available in the App Store!
+            .input-wrap
+              input.text-input(type="text", placeholder="Enter your email")
+              button#submit-secondary.btn-submit Keep in touch
+              .input-error.hide Please enter a valid email
+          .secondary-post-signup(style="display:none")
+            h2 Welcome to Faraway Kingdom!
+            p We'll send you a message when Faraway Kingdom is ready to download!
 
     .content-wrap
+      a(name="#features")
       section#nav-features.section-info
         ul.feature-list
           li.feature-item
@@ -72,6 +75,7 @@ html
             .feature-text
               h3 Gather your bravest heroes
               p and raid powerful monsters for even better loots.
+      a(name="#screenshots")
       section#nav-screenshots.section-slideshow
         ul.slideshow-list
           li.slideshow-item.first

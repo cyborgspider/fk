@@ -10,6 +10,12 @@ function removeSignup(signedUpStatus){
   }
 }
 
+function scrollToAnchor(link){
+    var aTag = $("a[href='"+ link +"']");
+    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+}
+
+
 
 $(function(){
 
@@ -18,6 +24,14 @@ $(function(){
       $(this).addClass('active');
       $(this).siblings().removeClass('active')
   });
+
+  $('.nav-main').on('click', 'a', function(e){
+      link = $(this).attr('href');
+      e.preventDefault();
+      var aTag = $("a[name='"+ link +"']");
+      $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+  });
+
 
   //Adjust this code to return true if user information is validated properly
   $('#submit-main').click(function(){

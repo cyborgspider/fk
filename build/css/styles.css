@@ -4,7 +4,7 @@ ol,ul{list-style:none}
 table{border-collapse:separate;border-spacing:0;vertical-align:middle}
 caption,th,td{text-align:left;font-weight:normal;vertical-align:middle}
 a img{border:none}
-body{font:normal 16px/1.5 "Lucida Sans","Lucida Sans Unicode",sans-serif;background:#0e0703;color:#d2d2d2;}
+body{font:normal 16px/1.5 "Lucida Sans","Lucida Sans Unicode",sans-serif;background:#211007;color:#d2d2d2;position:relative;}
 @media screen and (max-width:47.9em){body{background:url("../img/bg-small.jpg") no-repeat center 71px #211007}
 }h2{font-size:26px;margin-bottom:20px}
 h3{font-size:20px;margin-bottom:20px;color:#ffd200;}
@@ -42,7 +42,8 @@ a:hover > .home,li.active .home{background-position:0 -22px}
 .sns-link.twitter:hover{background-position:-33px -25px}
 .sns-link.reddit{width:33px;height:27px;background-position:0 -50px;margin-right:0;}
 .sns-link.reddit:hover{background-position:-33px -50px}
-.content-wrap{width:1140px;margin:0 auto 80px;}
+.top-wrap{position:relative}
+.content-wrap{width:1140px;margin:0 auto 80px;position:relative;}
 @media only screen and (max-width:71.250em){.content-wrap{width:656px}
 }@media only screen and (max-width:47.9em){.content-wrap{width:320px}
 }.logo-main{background:url("../img/logo-main.png") no-repeat;width:528px;height:153px;text-indent:-9999px;margin:0 auto 24px;}
@@ -51,7 +52,7 @@ a:hover > .home,li.active .home{background-position:0 -22px}
 @media only screen and (max-width:47.9em){.section-hero{height:297px;background:none}
 }.warrior{position:absolute;width:215px;height:124px;background:url("../img/warrior.gif") no-repeat;bottom:0;right:-100px;}
 @media only screen and (max-width:47.9em){.warrior{display:none}
-}.angel{position:absolute;width:104px;height:96px;top:-118px;left:-160px;background:url("../img/angel.gif") no-repeat;}
+}.angel{position:absolute;width:104px;height:96px;top:127px;left:12%;background:url("../img/angel.gif") no-repeat;z-index:3;}
 @media only screen and (max-width:47.9em){.angel{display:none}
 }.section-video{background:url("../img/bg-video.jpg") no-repeat;width:654px;height:397px;top:283px;left:50%;margin-left:-327px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:7px 7px 0;position:absolute;z-index:1;display:none;}
 @media only screen and (max-width:47.9em){.section-video{display:block;width:323px;height:195px;background:url("../img/bg-video-small.png") no-repeat;margin-left:-162px;top:194px;padding:4px 4px 0}
