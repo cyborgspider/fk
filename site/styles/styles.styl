@@ -575,7 +575,7 @@ i
   clear left
 #cboxContent
   position relative
-  background url(../img/modal-background.png) no-repeat
+  // background url(../img/modal-background.png) no-repeat
 #cboxLoadedContent
   overflow auto
   -webkit-overflow-scrolling touch
@@ -605,7 +605,7 @@ i
   width      85px
   height     24px
   right      0
-  top        -31px
+  top        -43px
   &:hover
     background-position 0 100%
 #cboxPrevious
@@ -616,23 +616,27 @@ i
   top        50%
   margin-top -60px
 #cboxPrevious
-  left 15px
+  left 0
   &:hover
     background-position 0 100%
 #cboxNext
-  right               15px
+  right               0
   background-position 100% 0
   &:hover
     background-position 100% 100%
-
 
 .cboxPhoto
   margin                 auto
   border                 0
   display                block
   max-width              none
+  box-sizing             border-box
   -ms-interpolation-mode bicubic
+  border                 solid 5px black
 #colorbox
 #cboxContent
 #cboxLoadedContent
   box-sizing content-box
+#cboxContent
+  border solid 7px #ffb900
+  border-radius 4px

@@ -10,13 +10,6 @@ function removeSignup(signedUpStatus){
   }
 }
 
-function scrollToAnchor(link){
-    var aTag = $("a[href='"+ link +"']");
-    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
-}
-
-
-
 $(function(){
 
   //Navigation active classes
@@ -26,9 +19,9 @@ $(function(){
   });
 
   $('.nav-main').on('click', 'a', function(e){
-      link = $(this).attr('href');
-      e.preventDefault();
+      var link = $(this).attr('href');
       var aTag = $("a[name='"+ link +"']");
+      e.preventDefault();
       $('html,body').animate({scrollTop: aTag.offset().top},'slow');
   });
 
@@ -56,7 +49,7 @@ $(function(){
   });
 
   //Activate the modal logic
-  $('.slideshow-link').colorbox({rel:'gallery',width:'923px',height:'534px',current:'',transition:'none'})
+  $('.slideshow-link').colorbox({rel:'gallery',current:'',transition:'none',maxWidth:'95%',maxHeight:'95%'})
 
 
   //RESPONSIVE: Display menu when clicked. Appearance dictated by CSS
@@ -65,10 +58,16 @@ $(function(){
     $('.nav-mobile').toggleClass('active')
   });
 
-  $('.nav-mobile').on('click','a',function(){
+  $('.nav-mobile').on('click','a',function(e){
+    e.preventDefault();
+    var link = $(this).attr('href');
+    var aTag = $("a[name='"+ link +"']");
+    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
     $('#mobile-toggle').children('a').toggleClass('active');
     $('.nav-mobile').toggleClass('active');
   });
+
+
 
   //We need to turn off modals when screen size is too small.
   $(window).resize(function(){

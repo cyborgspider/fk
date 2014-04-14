@@ -125,17 +125,18 @@ a:hover > .home,li.active .home{background-position:0 -22px}
 #cboxWrapper{max-width:none}
 #cboxOverlay{position:fixed;width:100%;height:100%;background:#000}
 #cboxMiddleLeft,#cboxBottomLeft{clear:left}
-#cboxContent{position:relative;background:url("../img/modal-background.png") no-repeat}
+#cboxContent{position:relative}
 #cboxLoadedContent{overflow:auto;-webkit-overflow-scrolling:touch}
 #cboxTitle{margin:0}
 #cboxLoadingOverlay,#cboxLoadingGraphic{position:absolute;top:0;left:0;width:100%;height:100%}
 #cboxPrevious,#cboxNext,#cboxClose{cursor:pointer;border:0;padding:0;margin:0;overflow:visible;position:absolute;text-indent:-99999px;outline:none}
-#cboxClose{background:url("../img/modal-close.png") no-repeat;width:85px;height:24px;right:0;top:-31px;}
+#cboxClose{background:url("../img/modal-close.png") no-repeat;width:85px;height:24px;right:0;top:-43px;}
 #cboxClose:hover{background-position:0 100%}
 #cboxPrevious,#cboxNext{background:url("../img/modal-arrows.png") no-repeat 0 0;width:65px;height:120px;top:50%;margin-top:-60px}
-#cboxPrevious{left:15px;}
+#cboxPrevious{left:0;}
 #cboxPrevious:hover{background-position:0 100%}
-#cboxNext{right:15px;background-position:100% 0;}
+#cboxNext{right:0;background-position:100% 0;}
 #cboxNext:hover{background-position:100% 100%}
-.cboxPhoto{margin:auto;border:0;display:block;max-width:none;-ms-interpolation-mode:bicubic}
+.cboxPhoto{margin:auto;border:0;display:block;max-width:none;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-ms-interpolation-mode:bicubic;border:solid 5px #000}
 #colorbox,#cboxContent,#cboxLoadedContent{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}
+#cboxContent{border:solid 7px #ffb900;-webkit-border-radius:4px;border-radius:4px}
