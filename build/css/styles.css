@@ -51,7 +51,7 @@ a:hover > .home,li.active .home{background-position:0 -22px}
 @media only screen and (max-width:47.9em){.section-hero{height:297px;background:none}
 }.warrior{position:absolute;width:215px;height:124px;background:url("../img/warrior.gif") no-repeat;bottom:0;right:-100px;}
 @media only screen and (max-width:47.9em){.warrior{display:none}
-}.angel{position:absolute;width:104px;height:96px;top:48px;left:-202px;background:url("../img/angel.gif") no-repeat;}
+}.angel{position:absolute;width:104px;height:96px;top:-118px;left:-160px;background:url("../img/angel.gif") no-repeat;}
 @media only screen and (max-width:47.9em){.angel{display:none}
 }.section-video{background:url("../img/bg-video.jpg") no-repeat;width:654px;height:397px;top:283px;left:50%;margin-left:-327px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:7px 7px 0;position:absolute;z-index:1;display:none;}
 @media only screen and (max-width:47.9em){.section-video{display:block;width:323px;height:195px;background:url("../img/bg-video-small.png") no-repeat;margin-left:-162px;top:194px;padding:4px 4px 0}
